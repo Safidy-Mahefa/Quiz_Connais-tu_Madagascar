@@ -84,8 +84,8 @@ p{
   align-items: center;
   transition: all .5s ease;
   overflow: hidden;
-  padding-right:1.3rem;
-  padding-left: 1.3rem;
+  padding-right:10px;
+  padding-left: 10px;
 }
 .optionContainer{
   display: flex;
