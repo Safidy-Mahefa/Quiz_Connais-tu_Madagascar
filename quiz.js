@@ -988,7 +988,7 @@ function newSession() {
 // 📎Partager le score
 function partagerScore() {
  const score = currentPoint / 5;
- const message = `J’ai eu ${score}/10 au quiz Madagascar 🇲🇬 ! T'oses me battre ? 💪 👉 http://localhost:7700/Quiz/quiz.html`;
+ const message = `J’ai eu ${score}/10 au quiz Madagascar 🇲🇬 ! T'oses me battre ? 💪 👉 https://safidy-mahefa.github.io/Quiz_Connais-tu_Madagascar/`;
 
 const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
  window.open(url, '_blank');
