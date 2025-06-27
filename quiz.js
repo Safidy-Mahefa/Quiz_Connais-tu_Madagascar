@@ -1,4 +1,3 @@
-
 // ==========================
 // 🧠 1. Données du quiz
 // ==========================
@@ -1008,6 +1007,7 @@ buttonNext.addEventListener("click", function () {
     addPoints();
     playSound(trackMusic);
     body.style.overflow="scroll";
+    buttonNext.style.display = "block";
   });
   
   
