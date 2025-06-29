@@ -293,6 +293,7 @@ h2{
   background-image: url(bggg.png);
   background-size: cover;
   background-position: center;
+  background-color: #F6EBDA;
   padding:20px;
   display:flex;
   justify-content:center;
