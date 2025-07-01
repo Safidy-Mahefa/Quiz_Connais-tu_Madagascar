@@ -1,3 +1,4 @@
+
 // ==========================
 // 🧠 1. Données du quiz
 // ==========================
@@ -204,7 +205,7 @@ const quiz = [
     "Il ne faut pas se précipiter",
     "On récolte ce qu’on sème",
     "Le mal est puni",
-    "J'adore ce Quizz"
+    "J'adore ce Quiz"
   ],
   answer: "On récolte ce qu’on sème",
   difficulty: "moyen",
@@ -543,7 +544,7 @@ const quiz = [
   {
     question: "Quelle est la langue étrangère la plus présente dans le malgache ?",
     options: [
-      "Français",
+      "Chinois",
       "Malais",
       "Arabe",
       "Langage des zébus"
@@ -810,6 +811,8 @@ var audioSec = document.querySelector(".audioSec");
 var stopwatch = document.querySelector(".stopwatch");
 var audioNewSession = document.querySelector(".audioCommencerSession");
 var trackMusic = document.querySelector(".trackMusic");
+var arrowUp = document.querySelector(".arrow-up");
+var container = document.querySelector(".container");
 
 
 
@@ -879,6 +882,7 @@ allOption.forEach(function (uneOption) {
     FbTitle.classList.add("active2");
     buttonNext.classList.add("active2");
     feedback.classList.add("active2");
+    container.classList.remove("fadeIn");
   });
 });
 
@@ -904,6 +908,7 @@ function temps() {
     FbTitle.classList.add("active2");
     buttonNext.classList.add("active2");
     feedback.classList.add("active2");
+    container.classList.remove("fadeIn");
   }
   if(currentTime>0){
     playSound(stopwatch);
@@ -950,6 +955,8 @@ function newSession() {
   FbTitle.classList.remove("active2");
   buttonNext.classList.remove("active2");
   feedback.classList.remove("active2");
+  container.classList.add("fadeIn");
+
 }
 
 // 🏁 Fin de la session
@@ -987,7 +994,7 @@ function newSession() {
 // 📎Partager le score
 function partagerScore() {
  const score = currentPoint / 5;
- const message = `J’ai eu ${score}/10 au quiz Madagascar 🇲🇬 ! T'oses me battre ? 💪 👉 https://safidy-mahefa.github.io/Quiz_Connais-tu_Madagascar/`;
+ const message = `J’ai eu ${score}/10 au quiz Madagascar 🇲🇬 ! T'oses me battre ? 💪 👉 http://localhost:7700/Quiz/quiz.html`;
 
 const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
  window.open(url, '_blank');
@@ -1008,6 +1015,7 @@ buttonNext.addEventListener("click", function () {
     playSound(trackMusic);
     body.style.overflow="scroll";
     buttonNext.style.display = "block";
+    container.classList.remove("fadeIn");
   });
   
   
@@ -1038,6 +1046,9 @@ accBtn.addEventListener("click", function () {
   trackMusic.pause();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   body.style.overflow="hidden";
+  container.classList.add("fadeIn");
+
+
 
   // Lancer le timer
   t = setInterval(temps, 1100);
@@ -1064,4 +1075,17 @@ function playSound(audio){
 
 window.addEventListener("load", function(){
     playSound(trackMusic);
+})
+
+
+//Pour afficher le arrow up 
+window.addEventListener("scroll", function(){
+  if(window.scrollY>420){
+  arrowUp.style.visibility = "visible";
+}else{
+  arrowUp.style.visibility = "hidden";
+}
+});
+arrowUp.addEventListener("click", function(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 })
